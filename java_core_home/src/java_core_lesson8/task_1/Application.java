@@ -3,32 +3,6 @@ package java_core_lesson8.task_1;
 import java.util.Scanner;
 
 public class Application {
-	public enum Seasons {
-		WINTER, SPRING, SUMMER, AUTUMN;
-	}
-
-	public enum Months {
-		JENUERY(31, Seasons.WINTER), FEBRUARY(28, Seasons.WINTER), MARCH(31, Seasons.SPRING), APRIL(30, Seasons.SPRING),
-		MAY(31, Seasons.SPRING), JUNE(30, Seasons.SUMMER), JULY(31, Seasons.SUMMER), AUGUST(31, Seasons.SUMMER),
-		SEPTEMBER(30, Seasons.AUTUMN), OCTOBER(31, Seasons.AUTUMN), NOVEMBER(30, Seasons.AUTUMN),
-		DECEMBER(31, Seasons.WINTER);
-
-		private int days;
-		private Seasons season;
-
-		Months(int days, Seasons season) {
-			this.days = days;
-			this.season = season;
-		}
-
-		public int getDays() {
-			return days;
-		}
-
-		public Seasons getSeason() {
-			return season;
-		}
-	}
 
 	static void menu() {
 		System.out.println("Для вибору пункту меню, введіть відповідно його номер:");
@@ -45,6 +19,7 @@ public class Application {
 						+"0. Exit");
 	}
 
+	
 	public static void main(String[] args) {
 		Months[] masMonths = Months.values();
 		Seasons[] masSeasons = Seasons.values();
@@ -209,7 +184,7 @@ public class Application {
 				String month = sc.next().toUpperCase();
 				boolean flag=isMonthPresent(masMonths,month);
 				if (flag) {
-					if(Months.valueOf(month).days%2==0) {
+					if(Months.valueOf(month).getDays()%2==0) {
 						System.out.println(month+" with an even number of days");
 					}else {
 						System.out.println(month+" with an odd number of days");
