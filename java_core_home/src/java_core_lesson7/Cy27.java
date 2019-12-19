@@ -27,14 +27,15 @@ public class Cy27 extends Plane implements ÑapabilitiesOfPlane{
 		System.out.println("Plane is moving RIGTH on: " + controlplane.movieRigth() + " km");
 	}
 
+	@Override
 	public void TurboAcceleration() {
-		System.out.println("MaxSpeed "+maxSpeed+" increased after use TurboAcceleration and equals "+(int)(Math.random() * (100+maxSpeed) - maxSpeed) + maxSpeed);		
+		System.out.println("MaxSpeed "+maxSpeed+" increased after use TurboAcceleration and equals "+(int)(Math.random() * 100 + maxSpeed));		
 	}
-
+	@Override
 	public void StealthTechnology() {
 		System.out.println("Plane is not visiable for "+(int)(Math.random() *100)+" minutes");
 	}
-
+	@Override
 	public void NuclearStrike() {
 		System.out.println((int)(Math.random()*10)+" nuclear warheads was to dump");
 	}
